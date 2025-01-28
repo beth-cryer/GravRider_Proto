@@ -1317,14 +1317,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 976068361}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: -1, z: 0, w: 0}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 330585546}
   m_Father: {fileID: 1887154378}
-  m_LocalEulerAnglesHint: {x: 0, y: -180, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!1 &1494359146
 GameObject:
   m_ObjectHideFlags: 0
@@ -1672,13 +1672,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1494359146}
   serializedVersion: 2
-  m_LocalRotation: {x: -7.850463e-18, y: 7.850466e-18, z: -0.70710695, w: -0.7071067}
-  m_LocalPosition: {x: 25.82726, y: 10.999999, z: -10.2285385}
+  m_LocalRotation: {x: -5.551119e-18, y: 9.614815e-18, z: -0.86602527, w: -0.50000036}
+  m_LocalPosition: {x: 25.82726, y: 12.749999, z: -10.2285385}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -270}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -240}
 --- !u!65 &1494359153
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1698,7 +1698,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 20, y: 20, z: 80}
+  m_Size: {x: 20, y: 30, z: 80}
   m_Center: {x: -4.836611, y: 0.58533716, z: -11.838446}
 --- !u!1001 &1887154377
 PrefabInstance:
@@ -1741,22 +1741,22 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 2b490c856d055c4478a9fe8ee4066b20,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.00000058114523
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 2b490c856d055c4478a9fe8ee4066b20,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 2b490c856d055c4478a9fe8ee4066b20,
-        type: 3}
-      propertyPath: m_LocalRotation.y
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2b490c856d055c4478a9fe8ee4066b20,
         type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 2b490c856d055c4478a9fe8ee4066b20,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 2b490c856d055c4478a9fe8ee4066b20,
+        type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2b490c856d055c4478a9fe8ee4066b20,
         type: 3}
@@ -1766,7 +1766,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 2b490c856d055c4478a9fe8ee4066b20,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 180
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2b490c856d055c4478a9fe8ee4066b20,
         type: 3}
@@ -1978,7 +1978,7 @@ MonoBehaviour:
   turnSpeed: 90
   gravForce: 10
   gravDirection: {x: 0, y: -1, z: 0}
-  rotateSpeed: 180
+  rotateSpeed: 360
   hoverModel: {fileID: 1887154378}
 --- !u!54 &1950931731
 Rigidbody:

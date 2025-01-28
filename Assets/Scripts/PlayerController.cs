@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -25,6 +26,11 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        if (Input.GetKeyUp(KeyCode.R))
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
+
         hoverModel.position = transform.position;
 
         float x = Input.GetAxis("Horizontal");
@@ -44,10 +50,11 @@ public class PlayerController : MonoBehaviour
             }
 
             targetRotation = Quaternion.LookRotation(transform.forward, -gravDirection);
+            //targetRotation = Quaternion.FromToRotation(transform.up, -gravDirection);
         }
 
         //Rotate model slowly to correct direction
-        hoverModel.rotation = Quaternion.Slerp(hoverModel.rotation, targetRotation, rotateSpeed * Time.deltaTime);
+        hoverModel.rotation = Quaternion.RotateTowards(hoverModel.rotation, targetRotation, rotateSpeed * Time.deltaTime);
 
         //Rotate hitbox instantly to correct direction
         transform.rotation = targetRotation;
@@ -63,6 +70,19 @@ public class PlayerController : MonoBehaviour
         Vector3 gravVector = gravDirection * gravForce;
 
         rb.AddForce(gravVector, ForceMode.Force);
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        /*
+        Vector3 normal = collision.GetContact(0).normal;
+        //Vector3 slopeForward = Vector3.ProjectOnPlane(transform.forward, normal).normalized;
+
+        Quaternion rot = Quaternion.FromToRotation(transform.up, normal);
+        //Quaternion rot = Quaternion.LookRotation(transform.forward, normal);
+
+        transform.rotation = rot;
+        */
     }
 
     private void OnTriggerEnter(Collider other)
