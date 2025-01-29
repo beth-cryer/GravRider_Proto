@@ -124,7 +124,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void OnTriggerLeave(Collider other)
+    private void OnTriggerExit(Collider other)
     {
         if (other.tag.Equals("GravitySurface"))
         {
